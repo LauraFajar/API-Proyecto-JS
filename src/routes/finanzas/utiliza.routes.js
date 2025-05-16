@@ -3,10 +3,10 @@ import * as utilizaController from '../../controllers/finanzas/utiliza.controlle
 
 const router = Router();
 
-router.get('/', utilizaController.getAll);
-router.get('/:id', utilizaController.getById);
-router.post('/', utilizaController.create);
-router.put('/:id', utilizaController.update);
-router.delete('/:id', utilizaController.deleteUtiliza);
+router.get('/listar', utilizaController.getAll);
+router.get('/buscar/:id', utilizaController.getById);
+router.post('/crear', utilizaController.create);
+router.put('/actualizar/:id', utilizaController.update);
+router.delete('/eliminar/:id', utilizaController.deleteUtiliza);
 
 export default router;

@@ -11,6 +11,14 @@ import rolRoutes from './routes/usuarios/rol.routes.js';
 import tiporolRoutes from './routes/usuarios/tiporol.routes.js';
 import usuarioRoutes from './routes/usuarios/usuario.routes.js';
 
+
+// Fitosanitario
+import epaRoutes from './routes/fitosanitario/epa.routes.js';
+import tratamientoRoutes from './routes/fitosanitario/tratamiento.routes.js';
+
+import inventarioRoutes from './routes/inventario/inventario.routes.js'
+import movimientoRoutes from './routes/inventario/movimiento.routes.js';
+
 const app = express();
 app.use(express.json());
 
@@ -26,11 +34,13 @@ app.use('/api/usuarios/rol', rolRoutes);
 app.use('/api/usuarios/tiporol', tiporolRoutes);
 app.use('/api/usuarios/usuario', usuarioRoutes);
 
-import iotRoutes from './routes/iot/iot.js';
-import trazabilidadRoutes from './routes/trazabilidad/trazabilidad.js';
+// Fitosanitario
+app.use('/api/fitosanitario/epa', epaRoutes);
+app.use('/api/fitosanitario/tratamiento', tratamientoRoutes);
 
-app.use('/iot', iotRoutes);
-app.use('/trazabilidad', trazabilidadRoutes);
+app.use('/api/inventario/inventario',inventarioRoutes);
+app.use('/api/inventario/movimiento', movimientoRoutes);
+
 
 app.listen(3000, () => {
     console.log('Servidor corriendo en http://localhost:3000');

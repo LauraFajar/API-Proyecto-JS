@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import realizaController from '../../controllers/usuarios/realiza.controller.js';
+import * as realizaController from '../../controllers/usuarios/realiza.controller.js';
 
 const router = Router();
 
